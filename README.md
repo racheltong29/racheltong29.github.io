@@ -1,1 +1,9 @@
-[more info here](https://racheltong29.github.io)
+__
+
+
+Welcome! I'm Rachel Tong -> 
+
+[more info here](racheltong29.github.io)
+
+
+___
