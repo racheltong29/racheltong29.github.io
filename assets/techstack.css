@@ -1,5 +1,6 @@
 body{
-  background-color: #090c29;
+  background-color: rgb(21, 10, 48);
+  overflow:hidden;
 }
 * {
   box-sizing: border-box;
@@ -10,7 +11,7 @@ body{
   bottom: 0;
   transform: translateX(-50%);
   height: max-content;
-  width: 200px;
+  width: 00px;
   mix-blend-mode: difference;
   -webbkit-mix-blend-mode: difference;
   filter: invert(1);
@@ -30,11 +31,9 @@ html {
 }
 
 .orbit {
-  background: #090c29;
+  background: rgb(21, 10, 48);
   float: left;
-  width: 100%;
-  min-width: 100vw;
-  min-height: 100vh;
+
 }
 
 .orbit-icon {

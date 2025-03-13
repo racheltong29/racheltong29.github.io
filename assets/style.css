@@ -1,43 +1,14 @@
 
 body {
-  
+  overflow-x: hidden;
   background-color: rgb(21, 10, 48);
 }
 
-.loader {
-  border: 16px transparent #f3f3f3; /* Light grey */
-  border-top: 16px transparent #3498db; /* Blue */
-  margin: 50%;
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  display:flex;
-  gap:5px;
-  animation:s1-0 1s infinite;
-}
 
-
-.loader:before,
-.loader:after {
-  content:"";
-  width:25px;
-  aspect-ratio:1;
-  box-shadow:0 0 0 3px inset #fff;
-  transform-origin:top right;
-  animation:s1-1 1s infinite;
-}
-.loader:after {
-  transform-origin:top left;
-  --s:-1;
-}
-@keyframes s1-0 {
-  to {transform:translateY(100%)}
-}
-@keyframes s1-1 {
-  to {transform:rotate(calc(var(--s,1)*90deg))}
-}
 
 .card {
+  margin-top: 10%;
+  margin-bottom: 10%;
   padding: 5px;
   margin-left:24%;
   margin-right: 24%;
@@ -209,6 +180,14 @@ h1 {
   animation: animate 10s linear infinite;
 }
 
+ul {
+  list-style-type: circle;
+}
+li {
+  font-family: "Carrois Gothic SC";
+  color:#fff;
+}
+
 @keyframes animate
 {
   0%
@@ -240,7 +219,8 @@ h2 {
 h3 {
   font-family: "Reenie Beanie", cursive;
   text-align: left;
-  font-size: x-large;
+
+  font-size: xx-large;
   position: relative;
   color: rgb(255, 255, 255);
 }
@@ -274,4 +254,41 @@ color: rgb(255, 255, 255);  /* Ensures white color for both unvisited and visite
 
 .contacts a:hover::after {
   transform: translateX(0);
+}
+
+.floating {
+  border-radius: 50%;
+  position: relative;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+      transform: translateY(0);
+  }
+
+  50% {
+      transform: translateY(-20px);
+  }
+
+  100% {
+      transform: translateY(0);
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: rgb(128, 48, 48);
+  color: white;
+  bottom:0;
+  margin-top: 10%;
+  
+}
+footer a {
+  color: white;
+}
+
+a {
+  text-decoration: none;
 }
