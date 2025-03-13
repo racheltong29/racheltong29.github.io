@@ -1,75 +1,236 @@
 
+body {
   
-  body {
-    
-    background-color: black;
-  }
+  background-color: rgb(21, 10, 48);
+}
 
-  .card {
-    padding: 10px;
-    margin:18%;
-    background: rgba(212, 177, 123, 0.842);
-    text-align: center;
-    border-radius: 10px;
-    position: relative;
-  }
+.card {
+  padding: 5px;
+  margin-left:30%;
+  margin-right:30%;
+  background: rgba(212, 177, 123, 0.842);
+  text-align: center;
+  border-radius: 10px;
+  position: relative;
+}
 
-  @property --angle{
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
-  }
-  .card::after, .card::before{
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-image: conic-gradient(from var(--angle), red,orange, blue, red);
-    top:50%;
-    left: 50%;
-    translate: -50% -50%;
-    z-index: -1;
-    padding : 3 px;
-    border-radius: 10px;
-    animation: 3s spin linear infinite;
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.card::after, .card::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(from var(--angle), red,orange, blue, red);
+  top:50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding : 3 px;
+  border-radius: 10px;
+  animation: 3s spin linear infinite;
 
+}
+.card::before{
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+@keyframes spin{
+  from{
+      --angle: 0deg;
   }
-  .card::before{
-    filter: blur(1.5rem);
-    opacity: 0.5;
+  to{
+      --angle: 360deg;
   }
-  @keyframes spin{
-    from{
-        --angle: 0deg;
-    }
-    to{
-        --angle: 360deg;
-    }
-  }
+}
 
-  .avatar {
-    align-items: center;
-    vertical-align: bottom;
-    float: left;
-    width: 200px;;
-    height: 200px;
-    border-radius: 100%;
-    border-color:antiquewhite;
-    
-  }
-
-  h1 {
-    margin-left: 80px;
-    margin-right: 80px;
-    text-align: left;
-    font-family: "Reenie Beanie", cursive;
-    font-weight: 400;
-    font-style: normal;
-      
-    font-size: 10rem;
-    color: white;
-  }
-  p {
-    color: whitesmoke;
-  }
+.avatar {
+  margin-inline-start: 15%;
+  padding-inline-end: 2%;
+  align-items: center;
+  vertical-align: bottom;
+  float: left;
+  width: 200px;;
+  height: 200px;
+  border-radius: 100%;
+  border-color:antiquewhite;
   
+}
+
+@keyframes shake {
+  25% {
+    transform: rotate(calc(var(--angle) * -1));
+  }
+
+  50% {
+    transform: rotate(var(--angle));
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.display {
+  display: grid;
+  gap: 0.1em;
+}
+
+.HOVER {
+  --width: 100%;
+  --time: 0.7s;
+
+  position: relative;
+  display: inline-block;
+  height: 1em;
+  padding: 1em;
+
+  color: white;
+  background:rgb(21, 10, 48);
+  overflow: hidden;
+}
+
+.HOVER text {
+  position: relative;
+  z-index: 5;
+  
+  transition: color var(--time);
+}
+
+.HOVER:hover text {
+  color: rgb(21, 10, 48);
+}
+
+.HOVER span {
+  position: absolute;
+  display: block;
+  content: "";
+  z-index: 0;
+  width: 0;
+  height: 0;
+  
+  border-radius: 100%;
+  background: #fff;
+  
+  transform: translate(-50%, -50%);
+  transition: width var(--time), padding-top var(--time);
+}
+
+.HOVER:hover span {
+  width: calc(var(--width) * 2.25);
+  padding-top: calc(var(--width) * 2.25);
+}
+
+.HOVER.FLASH:hover text {
+  color: white;
+}
+
+.HOVER.FLASH span {
+  background: #ff3b3b;
+}
+
+.animated {
+  --angle: 5deg;
+  animation: shake 0.3s;
+}
+
+.link{
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  
+  font-size: 1rem;
+}
+
+.contacts {
+  margin-left: 35%;
+  margin-right: 20%;
+
+}
+
+h1 {
+  margin-top: 10%;
+  margin-bottom: 2%;
+  margin-left: 80px;
+  margin-right: 80px;
+  text-align: left;
+  font-family: "Climate Crisis", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  width: 100%;
+  font-size: 5rem;
+  color: #ffffff;
+  line-height: 0.7cm;
+  outline: none;
+  animation: animate 10s linear infinite;
+}
+
+@keyframes animate
+{
+  0%
+  {
+    color: #ffffff;
+    text-shadow:none;
+  }
+  50%{
+    color: #fff;
+    text-shadow: 0 0 10px #e22626,
+    0 0 10px #ff8534,
+    0 0 40px #ff8534,
+    0 0 80px #a40055, 
+    0 0 160px #ff3434;
+
+  }
+}
+
+h2 {
+  margin-top: 50px;
+  text-align: left;
+  font-family: "Carrois Gothic SC";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+}
+
+h3 {
+  font-family: "Reenie Beanie", cursive;
+  text-align: left;
+  font-size: x-large;
+  position: relative;
+  color: rgb(255, 255, 255);
+}
+p {
+font-family: "Carrois Gothic SC";
+  color:rgba(255, 255, 255, 0.842);
+}
+.contacts a:link, .contacts
+a:visited {
+text-decoration: none;
+text-align: left;
+display: inline-block;
+position: relative;
+overflow: hidden;
+padding: 5px 10px;
+color: rgb(255, 255, 255);  /* Ensures white color for both unvisited and visited links */
+}
+
+.contacts a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(166, 87, 69);
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in-out;
+  z-index: -1;
+}
+
+.contacts a:hover::after {
+  transform: translateX(0);
+}
