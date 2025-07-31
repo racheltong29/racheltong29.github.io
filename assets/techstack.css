@@ -1,6 +1,8 @@
 body{
   background-color: rgb(21, 10, 48);
   overflow:hidden;
+  padding-top: 0px; /* Removed padding to bring navbar all the way up */
+  min-height: 100vh; /* Ensure body takes full viewport height */
 }
 * {
   box-sizing: border-box;
@@ -15,6 +17,7 @@ body{
   mix-blend-mode: difference;
   -webbkit-mix-blend-mode: difference;
   filter: invert(1);
+  z-index: 1000; /* Bring skills text to the front */
 
 }
 
@@ -32,7 +35,11 @@ html {
 
 .orbit {
   background: rgb(21, 10, 48);
-  float: left;
+  position: absolute;
+  top: 50vh; /* Position at 50% of viewport height */
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: -300px; /* Increased negative margin to bring circles up more */
 
 }
 
@@ -45,11 +52,19 @@ html {
   background: #ccc;
   color: #fff;
   text-align: center;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orbit-icon img {
+  width: 1.2em;
+  height: 1.2em;
+  object-fit: contain;
 }
 
 .orbit-wrap {
-  height: 40em;
+  height: 30em; /* Reduced from 40em */
   list-style: none;
   font-size: 1.3em;
 }
@@ -105,8 +120,8 @@ ul[class^=ring] li {
 }
 
 .ring-1 {
-  width: 33em;
-  height: 33em;
+  width: 25em; /* Reduced from 33em */
+  height: 25em; /* Reduced from 33em */
   -webkit-animation: clockwiseRotate 30s linear infinite;
           animation: clockwiseRotate 30s linear infinite;
 }
@@ -116,20 +131,20 @@ ul[class^=ring] li {
 }
 
 .ring-1 > *:nth-of-type(1) {
-  transform: rotate(100deg) translate(16.3em) rotate(-100deg);
+  transform: rotate(100deg) translate(12.3em) rotate(-100deg); /* Adjusted from 16.3em */
 }
 
 .ring-1 > *:nth-of-type(2) {
-  transform: rotate(253.3333333333deg) translate(16.9em) rotate(-253.3333333333deg);
+  transform: rotate(253.3333333333deg) translate(12.9em) rotate(-253.3333333333deg); /* Adjusted from 16.9em */
 }
 
 .ring-1 > *:nth-of-type(3) {
-  transform: rotate(380deg) translate(15.9em) rotate(-380deg);
+  transform: rotate(380deg) translate(11.9em) rotate(-380deg); /* Adjusted from 15.9em */
 }
 
 .ring-2 {
-  width: 23em;
-  height: 23em;
+  width: 17em; /* Reduced from 23em */
+  height: 17em; /* Reduced from 23em */
   -webkit-animation: clockwiseRotate 25s linear infinite;
           animation: clockwiseRotate 25s linear infinite;
 }
@@ -139,40 +154,40 @@ ul[class^=ring] li {
 }
 
 .ring-2 > *:nth-of-type(1) {
-  transform: rotate(47.5deg) translate(10.7em) rotate(-47.5deg);
+  transform: rotate(47.5deg) translate(7.7em) rotate(-47.5deg); /* Average of 8.7em and 6.7em */
 }
 
 .ring-2 > *:nth-of-type(2) {
-  transform: rotate(95deg) translate(11em) rotate(-95deg);
+  transform: rotate(95deg) translate(8em) rotate(-95deg); /* Average of 9em and 7em */
 }
 
 .ring-2 > *:nth-of-type(3) {
-  transform: rotate(142.5deg) translate(12em) rotate(-142.5deg);
+  transform: rotate(142.5deg) translate(9em) rotate(-142.5deg); /* Average of 10em and 8em */
 }
 
 .ring-2 > *:nth-of-type(4) {
-  transform: rotate(190deg) translate(12em) rotate(-190deg);
+  transform: rotate(190deg) translate(9em) rotate(-190deg); /* Average of 10em and 8em */
 }
 
 .ring-2 > *:nth-of-type(5) {
-  transform: rotate(237.5deg) translate(12em) rotate(-237.5deg);
+  transform: rotate(237.5deg) translate(9em) rotate(-237.5deg); /* Average of 10em and 8em */
 }
 
 .ring-2 > *:nth-of-type(6) {
-  transform: rotate(285deg) translate(12em) rotate(-285deg);
+  transform: rotate(285deg) translate(9em) rotate(-285deg); /* Average of 10em and 8em */
 }
 
 .ring-2 > *:nth-of-type(7) {
-  transform: rotate(332.5deg) translate(12em) rotate(-332.5deg);
+  transform: rotate(332.5deg) translate(9em) rotate(-332.5deg); /* Average of 10em and 8em */
 }
 
 .ring-2 > *:nth-of-type(8) {
-  transform: rotate(380deg) translate(12em) rotate(-380deg);
+  transform: rotate(380deg) translate(9em) rotate(-380deg); /* Average of 10em and 8em */
 }
 
 .ring-3 {
-  width: 13em;
-  height: 13em;
+  width: 9em; /* Reduced from 13em */
+  height: 9em; /* Reduced from 13em */
   -webkit-animation: clockwiseRotate 20s linear infinite;
           animation: clockwiseRotate 20s linear infinite;
 }
@@ -182,15 +197,15 @@ ul[class^=ring] li {
 }
 
 .ring-3 > *:nth-of-type(1) {
-  transform: rotate(126.6666666667deg) translate(6.5em) rotate(-126.6666666667deg);
+  transform: rotate(126.6666666667deg) translate(4.5em) rotate(-126.6666666667deg); /* Adjusted from 6.5em */
 }
 
 .ring-3 > *:nth-of-type(2) {
-  transform: rotate(253.3333333333deg) translate(7em) rotate(-253.3333333333deg);
+  transform: rotate(253.3333333333deg) translate(5em) rotate(-253.3333333333deg); /* Adjusted from 7em */
 }
 
 .ring-3 > *:nth-of-type(3) {
-  transform: rotate(380deg) translate(7em) rotate(-380deg);
+  transform: rotate(380deg) translate(5em) rotate(-380deg); /* Adjusted from 7em */
 }
 
 ul[class^=ring] {

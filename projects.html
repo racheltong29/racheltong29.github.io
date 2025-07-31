@@ -20,6 +20,145 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Baskervville+SC&family=Carrois+Gothic+SC&family=Climate+Crisis&family=Gaegu&family=Major+Mono+Display&family=Reenie+Beanie&family=Zilla+Slab+Highlight:wght@400;700&display=swap" rel="stylesheet">
 
+    <style>
+        .project-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 20px;
+            justify-content: center;
+        }
+        
+        .project-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            max-width: 400px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .project-title {
+            font-family: "Climate Crisis", sans-serif;
+            font-size: 1.5rem;
+            color: rgb(166, 87, 69);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .project-description {
+            color: aliceblue;
+            font-family: "Carrois Gothic SC", sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .skill-tag {
+            background: rgba(166, 87, 69, 0.8);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-family: "Major Mono Display", monospace;
+            font-weight: bold;
+        }
+        
+        .project-link {
+            display: inline-block;
+            background: rgba(166, 87, 69, 0.9);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-family: "Carrois Gothic SC", sans-serif;
+            font-weight: bold;
+            transition: background 0.3s ease;
+            text-align: center;
+            width: calc(100% - 40px);
+            box-sizing: border-box;
+        }
+        
+        .project-link:hover {
+            background: rgba(166, 87, 69, 1);
+            transform: scale(1.02);
+        }
+        
+        .project-iframe {
+            width: 100%;
+            height: 250px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            background: rgba(0,0,0,0.2);
+        }
+        
+        .iframe-fallback {
+            background: rgba(0,0,0,0.3);
+            border-radius: 10px;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .iframe-fallback p {
+            color: aliceblue;
+            margin-bottom: 15px;
+            font-family: "Carrois Gothic SC", sans-serif;
+        }
+        
+        .iframe-fallback .project-link {
+            display: inline-block;
+            width: auto;
+            padding: 8px 16px;
+            margin: 0;
+        }
+    </style>
+
+    <script>
+        // Handle iframe loading issues
+        window.addEventListener('load', function() {
+            const iframe = document.querySelector('.project-iframe');
+            const fallback = document.querySelector('.iframe-fallback');
+            
+            if (iframe && fallback) {
+                // Check if iframe loads successfully
+                iframe.addEventListener('load', function() {
+                    // Iframe loaded successfully
+                    fallback.style.display = 'none';
+                });
+                
+                iframe.addEventListener('error', function() {
+                    // Iframe failed to load
+                    iframe.style.display = 'none';
+                    fallback.style.display = 'block';
+                });
+                
+                // Fallback after 5 seconds if iframe doesn't load
+                setTimeout(function() {
+                    if (iframe.offsetHeight === 0 || iframe.contentWindow === null) {
+                        iframe.style.display = 'none';
+                        fallback.style.display = 'block';
+                    }
+                }, 5000);
+            }
+        });
+    </script>
+
 </head>
 
 <body>
@@ -37,11 +176,42 @@
         </nav>
     </header>
 
-    <div class="card">
-        <iframe frameborder="0" src="https://itch.io/embed-upload/11017729?color=000000" allowfullscreen="" width="640" height="380"><a href="https://racheltong29.itch.io/reflections-on-women-in-ai">Play Reflections on Women in AI on itch.io</a></iframe>
-    </div>
-    <div class="card">
-        <a href="finished AMV - 南山南 southern mountain.html" style="font-family:Baskervville SC; font-size:x-large; color:aliceblue;margin:10%;"> old animated music video</a>
+    <div class="project-container">
+        <div class="project-card">
+            <h2 class="project-title">Reflections on Women in AI</h2>
+            <div class="skills-tags">
+                <span class="skill-tag">Game Development</span>
+                <span class="skill-tag">Unity</span>
+                <span class="skill-tag">C#</span>
+                <span class="skill-tag">Interactive Media</span>
+            </div>
+            <p class="project-description">
+                An interactive game that explores the contributions and challenges of women in artificial intelligence. 
+                Players navigate through different scenarios highlighting the achievements and obstacles faced by women 
+                in the AI field, promoting awareness and discussion about gender representation in technology.
+            </p>
+            <iframe class="project-iframe" frameborder="0" src="https://itch.io/embed-upload/11017729?color=000000" allowfullscreen="" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <a href="https://racheltong29.itch.io/reflections-on-women-in-ai">Play Reflections on Women in AI on itch.io</a>
+            </iframe>
+            <div class="iframe-fallback" style="display: none; background: rgba(0,0,0,0.3); border-radius: 10px; padding: 20px; text-align: center; margin-bottom: 15px;">
+                <p style="color: aliceblue; margin-bottom: 15px;">Game preview temporarily unavailable</p>
+                <a href="https://racheltong29.itch.io/reflections-on-women-in-ai" class="project-link" style="display: inline-block; width: auto; padding: 8px 16px;">View on itch.io</a>
+            </div>
+            <a href="https://racheltong29.itch.io/reflections-on-women-in-ai" class="project-link">Play Game</a>
+        </div>
+        
+        <div class="project-card">
+            <h2 class="project-title">Southern Mountain AMV</h2>
+            <div class="skills-tags">
+                <span class="skill-tag">Scratch</span>
+            </div>
+            <p class="project-description">
+                An animated music video set to "南山南" (Southern Mountain), featuring creative visual storytelling 
+                and synchronized animations. This project showcases skills in video editing, animation techniques, 
+                and creative direction in multimedia production.
+            </p>
+            <a href="finished AMV - 南山南 southern mountain.html" class="project-link">Watch AMV</a>
+        </div>
     </div>
     
 </body>
