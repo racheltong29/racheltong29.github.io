@@ -1,39 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
-
     <meta name="author" content="Rachel Tong">
     <meta charset="utf-8">
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
-
 
     <title>art gallery - Rachel Tong</title>
 
-    <link rel="icon" href="images/websitelogo.png" type="image/x-icon">
+    <link rel="icon" href="images/websitelogo.svg" type="image/svg+xml">
 
     <link rel="stylesheet" href="assets\gallery.css">
     <link rel="stylesheet" href="assets\navbar.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Baskervville+SC&family=Carrois+Gothic+SC&family=Climate+Crisis&family=Gaegu&family=Major+Mono+Display&family=Reenie+Beanie&family=Zilla+Slab+Highlight:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Carrois+Gothic+SC&family=Reenie+Beanie&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --cream:      #f4ecd8;
+            --burnt:      #a65745;
+            --ink-purple: #150a30;
+        }
+
+        /* allow scrolling past the banner */
+        body { overflow: auto; }
+
+        .stripe-band {
+            height: 36px;
+            background: repeating-linear-gradient(-45deg, var(--burnt) 0px, var(--burnt) 18px, var(--cream) 18px, var(--cream) 28px);
+            border-top: 2px solid var(--cream);
+            border-bottom: 2px solid var(--cream);
+        }
+
+        /* section wrapper */
+        .gal-section {
+            padding: 60px 60px 80px;
+            background: #0e0824;
+        }
+        .gal-section.design-bg {
+            background: var(--burnt);
+        }
+
+        /* corner label — same as homepage */
+        .corner-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 18px;
+            border: 2px solid var(--cream);
+            box-shadow: 5px 5px 0 var(--burnt);
+            background: var(--ink-purple);
+            color: var(--cream);
+        }
+        .design-bg .corner-label {
+            background: var(--cream);
+            color: var(--ink-purple);
+            border-color: var(--ink-purple);
+            box-shadow: 5px 5px 0 var(--ink-purple);
+        }
+        .corner-label .num {
+            font-family: 'Climate Crisis', sans-serif;
+            font-size: 32px;
+            line-height: 1;
+        }
+        .corner-label .lbl {
+            font-family: 'Carrois Gothic SC', sans-serif;
+            font-size: 12px;
+            letter-spacing: 0.28em;
+        }
+
+        .section-tagline {
+            font-family: 'Reenie Beanie', cursive;
+            font-size: 28px;
+            color: var(--cream);
+            margin: 10px 0 40px;
+            line-height: 1;
+        }
+        .design-bg .section-tagline {
+            color: var(--cream);
+        }
+
+        /* alternating image list */
+        .art-list {
+            display: flex;
+            flex-direction: column;
+            gap: 52px;
+        }
+
+        .art-row {
+            display: flex;
+        }
+        .art-row.left  { justify-content: flex-start; }
+        .art-row.right { justify-content: flex-end; }
+
+        /* polaroid frame */
+        .polaroid {
+            background: var(--cream);
+            padding: 12px 12px 40px;
+            box-shadow: 6px 8px 20px rgba(0,0,0,0.45);
+            border: 1px solid rgba(21,10,48,0.15);
+            max-width: 500px;
+            width: 55%;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .polaroid:hover {
+            box-shadow: 10px 14px 28px rgba(0,0,0,0.55);
+        }
+        .polaroid img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+        .polaroid-caption {
+            font-family: 'Reenie Beanie', cursive;
+            font-size: 22px;
+            color: var(--ink-purple);
+            text-align: right;
+            padding-top: 10px;
+            line-height: 1;
+        }
+
+        /* tape strip above each polaroid */
+        .tape {
+            display: block;
+            width: 80px;
+            height: 18px;
+            opacity: 0.88;
+            border: 1px solid rgba(255,255,255,0.45);
+            margin-bottom: -4px;
+        }
+        .art-row.left  .tape { margin-left: 40px; }
+        .art-row.right .tape { margin-left: auto; margin-right: 40px; }
+
+        /* design grid */
+        .design-list {
+            display: flex;
+            flex-direction: column;
+            gap: 52px;
+        }
+    </style>
 </head>
+
 <body>
     <header>
-        <a href="index.html"><img class="logo" src="images/websitelogo.png" alt="logo" style="width:50px;height:50px;"></a>
+        <div class="header-left">
+            <a href="index.html"><img class="logo" src="images/websitelogo.svg" alt="logo"></a>
+            <span class="site-name">rachel · tong</span>
+        </div>
         <nav>
             <ul class="nav_links">
               <li><a href="index.html">home</a></li>
               <li><a href="projects.html">projects</a></li>
               <li><a href="resume3.pdf">resume</a></li>
-              <li><a href="gallery.html">gallery</a></li>
+              <li class="active"><a href="gallery.html">gallery</a></li>
               <li><a href="misc.html">misc</a></li>
               <li><a href="techstack.html">techstack</a></li>
             </ul>
         </nav>
     </header>
+
+    <!-- rotating 3d carousel -->
     <div class="banner">
         <div class="slider" style="--quantity: 8">
             <div class="item" style="--position: 1"><img src="images/ecdysis.jpg" alt="ecdysis"/></div>
@@ -46,26 +173,144 @@
             <div class="item" style="--position: 8"><img src="images/laundry.jpg" alt="laundry"/></div>
         </div>
         <div class="content">
-            <h1>
-                GALLERY
-            </h1>
-        </div>
-        <div>
-            <p>
-                wip
-            </p>
+            <h1>GALLERY</h1>
         </div>
     </div>
-    
-    <div>
-        <img src="images/artwork1.png" alt="1" style="align-items:center;margin:10%;margin-top:40%;width:500px;">
-        <img src="images/artwork2.png" alt="2" style="align-items:right;margin:10%;width:700px;">
-        <img src="images/artwork3.png" alt="3" style="align-items:center;margin:10%;width:500px;">
-        <img src="images/artwork4.png" alt="4" style="align-items:center;margin:10%;width:500px;">
-        <img src="images/artwork5.png" alt="5" style="align-items:center;margin:10%;width:500px;">
-        <img src="images/artwork6.png" alt="6" style="align-items:center;margin:10%;width:500px;">
-        <img src="images/artwork7.png" alt="7" style="align-items:center;margin:10%;width:500px;">
-        
-    </div>
+
+    <div class="stripe-band"></div>
+
+    <!-- ── ART ── -->
+    <section class="gal-section">
+        <div class="corner-label" style="transform: rotate(-1.5deg);">
+            <span class="num">01</span>
+            <span class="lbl">PAINTINGS + DRAWINGS</span>
+        </div>
+
+        <div class="art-list">
+
+            <div class="art-row left">
+                <div style="display:flex; flex-direction:column;">
+                    <span class="tape" style="background: repeating-linear-gradient(90deg, #FF3B7F 0px, #FF3B7F 8px, rgba(255,255,255,0.22) 8px, rgba(255,255,255,0.22) 12px);"></span>
+                    <div class="polaroid" style="transform: rotate(-2deg);">
+                        <img src="images/artwork1.png" alt="artwork 1">
+                    </div>
+                </div>
+            </div>
+
+            <div class="art-row right">
+                <div style="display:flex; flex-direction:column; align-items:flex-end;">
+                    <span class="tape" style="background: repeating-linear-gradient(90deg, #3b6dc4 0px, #3b6dc4 8px, rgba(255,255,255,0.22) 8px, rgba(255,255,255,0.22) 12px);"></span>
+                    <div class="polaroid" style="transform: rotate(1.8deg);">
+                        <img src="images/artwork2.png" alt="artwork 2">
+                    </div>
+                </div>
+            </div>
+
+            <div class="art-row left">
+                <div style="display:flex; flex-direction:column;">
+                    <span class="tape" style="background: repeating-linear-gradient(90deg, #FF3B7F 0px, #FF3B7F 8px, rgba(255,255,255,0.22) 8px, rgba(255,255,255,0.22) 12px);"></span>
+                    <div class="polaroid" style="transform: rotate(-1.2deg);">
+                        <img src="images/artwork3.png" alt="artwork 3">
+                    </div>
+                </div>
+            </div>
+
+            <div class="art-row right">
+                <div style="display:flex; flex-direction:column; align-items:flex-end;">
+                    <span class="tape" style="background: repeating-linear-gradient(90deg, #00ACEE 0px, #00ACEE 8px, rgba(255,255,255,0.22) 8px, rgba(255,255,255,0.22) 12px);"></span>
+                    <div class="polaroid" style="transform: rotate(2.2deg);">
+                        <img src="images/artwork4.png" alt="artwork 4">
+                    </div>
+                </div>
+            </div>
+
+            <div class="art-row left">
+                <div style="display:flex; flex-direction:column;">
+                    <span class="tape" style="background: repeating-linear-gradient(90deg, #a65745 0px, #a65745 8px, rgba(255,255,255,0.22) 8px, rgba(255,255,255,0.22) 12px);"></span>
+                    <div class="polaroid" style="transform: rotate(-1.8deg);">
+                        <img src="images/artwork5.png" alt="artwork 5">
+                    </div>
+                </div>
+            </div>
+
+            <div class="art-row right">
+                <div style="display:flex; flex-direction:column; align-items:flex-end;">
+                    <span class="tape" style="background: repeating-linear-gradient(90deg, #FF3B7F 0px, #FF3B7F 8px, rgba(255,255,255,0.22) 8px, rgba(255,255,255,0.22) 12px);"></span>
+                    <div class="polaroid" style="transform: rotate(1.4deg);">
+                        <img src="images/artwork6.png" alt="artwork 6">
+                    </div>
+                </div>
+            </div>
+
+            <div class="art-row left">
+                <div style="display:flex; flex-direction:column;">
+                    <span class="tape" style="background: repeating-linear-gradient(90deg, #3b6dc4 0px, #3b6dc4 8px, rgba(255,255,255,0.22) 8px, rgba(255,255,255,0.22) 12px);"></span>
+                    <div class="polaroid" style="transform: rotate(-0.8deg);">
+                        <img src="images/artwork7.png" alt="artwork 7">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="stripe-band"></div>
+
+    <!-- ── DESIGN PORTFOLIO ── -->
+    <section class="gal-section design-bg">
+        <div class="corner-label" style="transform: rotate(1.5deg);">
+            <span class="num">02</span>
+            <span class="lbl">DESIGN PORTFOLIO</span>
+        </div>
+        <div class="design-list">
+
+            <!-- design 1–3 on one row -->
+            <div style="display: flex; gap: 32px; justify-content: flex-start; flex-wrap: wrap;">
+
+                <div style="display:flex; flex-direction:column;">
+                    <span class="tape" style="background: repeating-linear-gradient(90deg, #150a30 0px, #150a30 8px, rgba(255,255,255,0.22) 8px, rgba(255,255,255,0.22) 12px);"></span>
+                    <div class="polaroid" style="transform: rotate(-1.5deg); width: auto; max-width: 280px;">
+                        <img src="images/design1.svg" alt="design 1">
+                    </div>
+                </div>
+
+                <div style="display:flex; flex-direction:column; margin-top: 18px;">
+                    <span class="tape" style="background: repeating-linear-gradient(90deg, #150a30 0px, #150a30 8px, rgba(255,255,255,0.22) 8px, rgba(255,255,255,0.22) 12px);"></span>
+                    <div class="polaroid" style="transform: rotate(1.2deg); width: auto; max-width: 280px;">
+                        <img src="images/design2.svg" alt="design 2">
+                    </div>
+                </div>
+
+                <div style="display:flex; flex-direction:column; margin-top: 8px;">
+                    <span class="tape" style="background: repeating-linear-gradient(90deg, #150a30 0px, #150a30 8px, rgba(255,255,255,0.22) 8px, rgba(255,255,255,0.22) 12px);"></span>
+                    <div class="polaroid" style="transform: rotate(-1deg); width: auto; max-width: 280px;">
+                        <img src="images/design3.svg" alt="design 3">
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- design 4 & 5 alternating -->
+            <div class="art-row right">
+                <div style="display:flex; flex-direction:column; align-items:flex-end;">
+                    <span class="tape" style="background: repeating-linear-gradient(90deg, #150a30 0px, #150a30 8px, rgba(255,255,255,0.22) 8px, rgba(255,255,255,0.22) 12px);"></span>
+                    <div class="polaroid" style="transform: rotate(2deg);">
+                        <img src="images/design4.svg" alt="design 4">
+                    </div>
+                </div>
+            </div>
+
+            <div class="art-row left">
+                <div style="display:flex; flex-direction:column;">
+                    <span class="tape" style="background: repeating-linear-gradient(90deg, #150a30 0px, #150a30 8px, rgba(255,255,255,0.22) 8px, rgba(255,255,255,0.22) 12px);"></span>
+                    <div class="polaroid" style="transform: rotate(-1.8deg);">
+                        <img src="images/design5.png.png" alt="design 5">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
 </body>
 </html>

@@ -1,216 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
-    <meta name="author" content="Rachel Tong">
-    <meta name="keywords" content="Rachel, Tong, Rachel Tong, rachel, tong, rachel tong">
     <meta charset="utf-8">
-    <!--original orbiting animation from Anne Klapwijk-->
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
-
+    <meta name="author" content="Rachel Tong">
+    <meta name="keywords" content="Rachel Tong, portfolio, CMU, machine learning">
     <title>Rachel Tong</title>
 
-    <link rel="icon" href="images/websitelogo.png" type="image/x-icon">
-    
-
-    <link rel="stylesheet" href="assets\style.css">
-    <link rel="stylesheet" href="assets\navbar.css">
+    <link rel="icon" href="images/websitelogo.svg" type="image/svg+xml">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Baskervville+SC&family=Carrois+Gothic+SC&family=Climate+Crisis&family=Gaegu&family=Major+Mono+Display&family=Reenie+Beanie&family=Zilla+Slab+Highlight:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Carrois+Gothic+SC&family=Reenie+Beanie&display=swap" rel="stylesheet">
+
+    <!-- React 18 + Babel standalone -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; }
+        html, body { margin: 0; padding: 0; width: 100%; }
+        body { background: #0e0824; overflow-x: hidden; }
+
+        :root {
+            --cream:      #f4ecd8;
+            --burnt:      #a65745;
+            --ink-purple: #150a30;
+        }
+
+        .climate { font-family: 'Climate Crisis', sans-serif; }
+        .beanie  { font-family: 'Reenie Beanie', cursive; }
+        .mono    { font-family: 'Carrois Gothic SC', sans-serif; }
+
+        a { color: inherit; }
+
+        /* hide scrollbar */
+        ::-webkit-scrollbar { display: none; }
+        * { scrollbar-width: none; }
+    </style>
 </head>
-
 <body>
-    <header>
-        <a href="index.html"><img class="logo" src="images/websitelogo.png" alt="logo" style="width:50px;height:50px;"></a>
-        <nav>
-            <ul class="nav_links">
-              <li><a href="index.html">home</a></li>
-              <li><a href="projects.html">projects</a></li>
-              <li><a href="resume3.pdf">resume</a></li>
-              <li><a href="gallery.html">gallery</a></li>
-              <li><a href="misc.html">misc</a></li>
-              <li><a href="techstack.html">techstack</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <div class="columns">
-        <img src="images/betterpfp.jpg" alt="pfp" class = "avatar">
-        <b></b>
-        <h1> rachel tong</h1>
-
-    </div>
-
-    <div class = "contacts">
-      <h2> > freshman @ carnegie mellon university scs </h2>
-
-      <!--<img src="images/starsmall.gif" alt="starssmall" style="float:right;width:100px;">-->
-      <a href="https://www.linkedin.com/in/racheltong29">
-        <img src="images/linkedin.png" alt="linkedin" style="width:30x;height:30px;">
-      </a>
-      <a href="mailto:racheltong29@gmail.com">
-        <img src="images/gmail.svg" alt="gmail" style="width:30x;height:30px;">
-      </a>
-      <a href="https://github.com/racheltong29">
-        <img src="images/git.svg" alt="github" style="width:30x;height:30px;">
-      </a>
-      <a href="https://www.instagram.com/racheltong29">
-        <img src="images/insta.svg" alt="instagram" style="width:30x;height:30px;">
-      </a>
-
-      <div class="display">
-        <a class="HOVER" href="projects.html">
-            <span></span>
-            <text>projects</text>
-        </a>
-        <a class="HOVER" href="resume3.pdf" target="_blank">
-            <span></span>
-            <text>resume</text>
-        </a>
-        <a class="HOVER" href="gallery.html">
-            <span></span>
-            <text>gallery</text>
-        </a>
-        <a class="HOVER" href="misc.html">
-            <span></span>
-            <text>miscellaneous</text>
-        </a>
-        <a class="HOVER FLASH" href="techstack.html">
-            <span></span>
-            <text>tech stack</text>
-        </a>
-    </div>
-      
-    </div>
-    
-    <div class="redblock">
-        <b>
-            <h3>
-                > about me
-            </h3>
-        </b>
-        <p>
-            Hi there! i'm an aspiring machine learning engineer who likes to tinker with web development, microcontrollers, + visual novels while wondering about interesting theoretical problems. i'm also a hobby acrylic painter in my free time - feel free to check out my art gallery.
-        </p>
-
-    </div>
-
-    <div>
-        <img src="images/starlarge.gif" alt="stars" style="width:128px;height:128px;float:left;margin-left:20%">
-    </div>
-
-    <div class="contacts">
-        <b>
-            <h3>
-                > education
-            </h3>
-        </b>
-        <p>
-            <b>carnegie mellon university - bachelor of science in computer science (intended concentration in machine learning) </b>
-                <ul>
-                    <li>gpa: 4.0</li>
-                    <li>relevant courses:  Computer Systems, Functional Programming, Probability and Computing, Imperative Computation,
-                        Mathematical Foundations for CS, Experimental Physics</li>
-                    <li>activities: ScottyLabs Labrador Developer, ACM, Computer Graphics Club</li>
-                </ul> 
-
-        </p>
-
-        <p>
-            <b>ohio state university - academy student </b>
-                <ul>
-                    <li>gpa: 4.0</li>
-                    <li>relevant courses: calculus 3, discrete structures, probability and statistics for engineers, c++, python</li>
-                    <li>current courses: software I, foundations of higher mathematics, linear algebra</li>
-                    <li>activities: acm-w, competitive programming club, ai club</li>
-                </ul> 
-            
-        </p>
-
-        <p>
-            <b>olentangy orange high school - class of '25 </b>
-                <ul>
-                    <li>unweighted gpa: 4.0</li>
-                    <li>weighted gpa: 4.64</li>
-                    <li>class rank: 2</li>
-                    <li>ap classes (all 5s): calculus ab & bc, physics c, seminar, micro & macro economics, computer science a & principles, statistics, us & world history</li>
-                    <li>current ap classes: research & spanish</li>
-                    <li>activities: national art honors society president, varsity science olympiad, competitive programming, spanish honors society, FIRST Robotics</li>
-                </ul> 
-            
-        </p>
-
-        <p>
-            <b>carnegie mellon pre-college 2022</b>
-                <ul>
-                    <li>courses: principles of imperative computation, matrices & linear transformations</li>
-                    <li>activities: pianist in small pre-college cohort music club </li>
-                </ul> 
-            
-        </p>
-
-
-
-    </div>
-
-    
-    <div class="contacts">
-        <b>
-            <h3>
-                > my experiences
-            </h3>
-        </b>
-
-        <p>
-            <b>research assistant @ generative intelligence lab- carnegie mellon university</b> (spring 2026)
-        </p>
-
-        <p>
-            <b>intern - ai owl </b> (summer 2025)
-        </p>
-
-        <p>
-            <b>intern - marion county it department </b> (summer 2024)
-        </p>
-        
-        <p>
-            <b>receptionist - dublin green family dental</b> (2022-2024)
-        </p>
-
-        <p>
-            <b>TA - techgirlz</b> (2023)
-        </p>
-
-        <p>
-            <b>mentor - acquaint</b> (2022 - present)
-        </p>
-
-        <p>
-            <b>tutor - ENGin program</b> (2022 - present)
-        </p>
-
-        <p>
-            <b>substitute art teacher - OCCS</b> (2024)
-        </p>
-
-        <div class="floating">
-            <img src="images/dog.gif" alt="dog" style="width:200px;float:right;position-anchor:sticky;">
-        </div>
-
-    </div>
-    
-
-
-    <footer>
-        <p></p>
-        <p><a href="mailto:racheltong29@gmail.com">racheltong29@gmail.com</a></p>
-        <p>Lewis Center, Ohio</p>
-      </footer>
-    
-    
-
-    
+    <div id="root"></div>
+    <script type="text/babel" src="home.jsx" data-type="module"></script>
 </body>
+</html>

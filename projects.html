@@ -1,173 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
     <meta name="author" content="Rachel Tong">
     <meta name="keywords" content="Rachel, Tong, Rachel Tong, rachel, tong, rachel tong">
     <meta charset="utf-8">
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
 
     <title>projects - Rachel Tong</title>
 
-    <link rel="icon" href="images/websitelogo.png" type="image/x-icon">
-    
+    <link rel="icon" href="images/websitelogo.svg" type="image/svg+xml">
 
-    <link rel="stylesheet" href="assets\style.css">
     <link rel="stylesheet" href="assets\navbar.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Baskervville+SC&family=Carrois+Gothic+SC&family=Climate+Crisis&family=Gaegu&family=Major+Mono+Display&family=Reenie+Beanie&family=Zilla+Slab+Highlight:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Carrois+Gothic+SC&family=Reenie+Beanie&display=swap" rel="stylesheet">
 
     <style>
-        .project-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            padding: 20px;
-            justify-content: center;
+        *, *::before, *::after { box-sizing: border-box; }
+        html, body { margin: 0; padding: 0; }
+        ::-webkit-scrollbar { display: none; }
+        * { scrollbar-width: none; }
+
+        :root {
+            --cream:      #f4ecd8;
+            --burnt:      #a65745;
+            --ink-purple: #150a30;
         }
-        
-        .project-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 25px;
-            max-width: 400px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        body {
+            background: #0e0824;
+            color: var(--cream);
+            font-family: 'Carrois Gothic SC', sans-serif;
         }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+
+        a { color: inherit; text-decoration: none; }
+
+        /* ── hero ── */
+        .projects-hero {
+            padding: 60px 60px 32px;
+            position: relative;
         }
-        
-        .project-title {
-            font-family: "Climate Crisis", sans-serif;
-            font-size: 1.5rem;
-            color: rgb(166, 87, 69);
-            margin-bottom: 15px;
-            text-align: center;
-        }
-        
-        .project-description {
-            color: aliceblue;
-            font-family: "Carrois Gothic SC", sans-serif;
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            text-align: justify;
-        }
-        
-        .skills-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 20px;
-        }
-        
-        .skill-tag {
-            background: rgba(166, 87, 69, 0.8);
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-family: "Major Mono Display", monospace;
-            font-weight: bold;
-        }
-        
-        .project-link {
-            display: inline-block;
-            background: rgba(166, 87, 69, 0.9);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-family: "Carrois Gothic SC", sans-serif;
-            font-weight: bold;
-            transition: background 0.3s ease;
-            text-align: center;
-            width: calc(100% - 40px);
-            box-sizing: border-box;
-        }
-        
-        .project-link:hover {
-            background: rgba(166, 87, 69, 1);
-            transform: scale(1.02);
-        }
-        
-        .project-iframe {
-            width: 100%;
-            height: 250px;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            background: rgba(0,0,0,0.2);
-        }
-        
-        .iframe-fallback {
-            background: rgba(0,0,0,0.3);
-            border-radius: 10px;
-            padding: 40px 20px;
-            text-align: center;
-            margin-bottom: 15px;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .iframe-fallback p {
-            color: aliceblue;
-            margin-bottom: 15px;
-            font-family: "Carrois Gothic SC", sans-serif;
-        }
-        
-        .iframe-fallback .project-link {
-            display: inline-block;
-            width: auto;
-            padding: 8px 16px;
+        .projects-hero h1 {
+            font-family: 'Climate Crisis', sans-serif;
+            font-size: clamp(72px, 10vw, 130px);
+            line-height: 0.85;
+            color: var(--cream);
+            letter-spacing: -0.04em;
             margin: 0;
+            text-shadow:
+                6px 6px 0 var(--burnt),
+                12px 12px 0 rgba(0,172,238,0.3);
+        }
+        .projects-hero p {
+            font-family: 'Reenie Beanie', cursive;
+            font-size: 28px;
+            color: var(--cream);
+            margin: 14px 0 0;
+            line-height: 1;
+        }
+
+        /* ── stripe band ── */
+        .stripe-band {
+            height: 36px;
+            background: repeating-linear-gradient(-45deg, var(--burnt) 0px, var(--burnt) 18px, var(--cream) 18px, var(--cream) 28px);
+            border-top: 2px solid var(--cream);
+            border-bottom: 2px solid var(--cream);
+            margin: 32px 0 0;
+        }
+
+        /* ── grid ── */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 48px 40px;
+            padding: 56px 60px 80px;
+        }
+
+        /* ── card ── */
+        .pcard {
+            background: var(--cream);
+            color: var(--ink-purple);
+            border: 2px solid var(--ink-purple);
+            box-shadow: 6px 6px 0 var(--burnt);
+            padding: 28px 24px 22px;
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .pcard:hover {
+            transform: translateY(-4px) rotate(0deg) !important;
+            box-shadow: 9px 10px 0 var(--burnt);
+        }
+
+        /* tape strip at top of each card */
+        .tape {
+            position: absolute;
+            top: -13px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90px;
+            height: 20px;
+            opacity: 0.9;
+            border: 1px solid rgba(255,255,255,0.45);
+        }
+
+        .pcard-num {
+            font-size: 10px;
+            letter-spacing: 0.22em;
+            color: var(--burnt);
+            opacity: 0.8;
+        }
+
+        .pcard-title {
+            font-family: 'Climate Crisis', sans-serif;
+            font-size: 26px;
+            line-height: 1;
+            margin: 6px 0 10px;
+            color: var(--ink-purple);
+        }
+
+        .pcard-desc {
+            font-size: 13px;
+            line-height: 1.65;
+            margin: 0 0 14px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+
+        .tag {
+            font-size: 9px;
+            padding: 3px 8px;
+            background: var(--ink-purple);
+            color: var(--cream);
+            letter-spacing: 0.1em;
+        }
+
+.pcard-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            padding: 9px 16px;
+            background: var(--ink-purple);
+            color: var(--cream);
+            border: 2px solid var(--ink-purple);
+            box-shadow: 3px 3px 0 var(--burnt);
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        .pcard-link:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 5px 5px 0 var(--burnt);
         }
     </style>
-
-    <script>
-        // Handle iframe loading issues
-        window.addEventListener('load', function() {
-            const iframe = document.querySelector('.project-iframe');
-            const fallback = document.querySelector('.iframe-fallback');
-            
-            if (iframe && fallback) {
-                // Check if iframe loads successfully
-                iframe.addEventListener('load', function() {
-                    // Iframe loaded successfully
-                    fallback.style.display = 'none';
-                });
-                
-                iframe.addEventListener('error', function() {
-                    // Iframe failed to load
-                    iframe.style.display = 'none';
-                    fallback.style.display = 'block';
-                });
-                
-                // Fallback after 5 seconds if iframe doesn't load
-                setTimeout(function() {
-                    if (iframe.offsetHeight === 0 || iframe.contentWindow === null) {
-                        iframe.style.display = 'none';
-                        fallback.style.display = 'block';
-                    }
-                }, 5000);
-            }
-        });
-    </script>
-
 </head>
 
 <body>
     <header>
-        <a href="index.html"><img class="logo" src="images/websitelogo.png" alt="logo" style="width:50px;height:50px;"></a>
+        <div class="header-left">
+            <a href="index.html"><img class="logo" src="images/websitelogo.svg" alt="logo"></a>
+            <span class="site-name">rachel · tong</span>
+        </div>
         <nav>
             <ul class="nav_links">
               <li><a href="index.html">home</a></li>
-              <li><a href="projects.html">projects</a></li>
+              <li class="active"><a href="projects.html">projects</a></li>
               <li><a href="resume3.pdf">resume</a></li>
               <li><a href="gallery.html">gallery</a></li>
               <li><a href="misc.html">misc</a></li>
@@ -176,99 +178,85 @@
         </nav>
     </header>
 
-    <div class="project-container">
-        <div class="project-card">
-            <h2 class="project-title">CMU Bulletin Web App</h2>
-            <div class="skills-tags">
-                <span class="skill-tag">React</span>
-                <span class="skill-tag">Firebase</span>
-                <span class="skill-tag">NoSQL</span>
-                <span class="skill-tag">Cloud Functions</span>
-            </div>
-            <p class="project-description">
-                A web application that allows users to post and view messages on a bulletin board.
-            </p>
-            <iframe class="project-iframe" frameborder="0" src="https://cmubulletin.com/" allowfullscreen="" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <a href="https://cmubulletin.com/">View CMU Bulletin Web App</a>
-            </iframe>
-            <div class="iframe-fallback" style="display: none; background: rgba(0,0,0,0.3); border-radius: 10px; padding: 20px; text-align: center; margin-bottom: 15px;">
-                <p style="color: aliceblue; margin-bottom: 15px;">Web app temporarily unavailable</p>
-                <a href="https://cmubulletin.com/" class="project-link" style="display: inline-block; width: auto; padding: 8px 16px;">View on web.app</a>
-            </div>
-            <a href="https://cmubulletin.com/" class="project-link">View Web App</a>
-        </div>
-        
-        <div class="project-card">
-            <h2 class="project-title">Algorithms With A Purpose</h2>
-            <div class="skills-tags">
-                <span class="skill-tag">Three.js</span>
-                <span class="skill-tag">Figma</span>
-                <span class="skill-tag">Posters</span>
-                <span class="skill-tag">Stickers</span>
-            </div>
-            <p class="project-description">
-                A 3D game viewer that allows users to view and interact with 3D models.
-            </p>
-            <iframe class="project-iframe" frameborder="0" src="https://awap.acmatcmu.com/" allowfullscreen="" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <a href="https://awap.acmatcmu.com/">View Algorithms With A Purpose</a>
-            </iframe>
-            <div class="iframe-fallback" style="display: none; background: rgba(0,0,0,0.3); border-radius: 10px; padding: 20px; text-align: center; margin-bottom: 15px;">
-                <p style="color: aliceblue; margin-bottom: 15px;">3D game viewer temporarily unavailable</p>
-                <a href="https://awap.acmatcmu.com/" class="project-link" style="display: inline-block; width: auto; padding: 8px 16px;">View on website</a>
-            </div>
-            <a href="https://awap.acmatcmu.com/" class="project-link">View 3D Game Viewer</a>
-        </div>
-        
-        <div class="project-card">
-            <h2 class="project-title">CatApply Gamification</h2>
-            <div class="skills-tags">
-                <span class="skill-tag">HTML</span>
-                <span class="skill-tag">CSS</span>
-                <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">Figma</span>
-                <span class="skill-tag">AWS</span>
-            </div>
-            <p class="project-description">
-                A gamification project that allows users to improve their motivation in job applications.
-            </p>
-            <a href="https://github.com/racheltong29/teamastra" class="project-link">View on GitHub</a>
-        </div>
-        
-        <div class="project-card">
-            <h2 class="project-title">Reflections on Women in AI</h2>
-            <div class="skills-tags">
-                <span class="skill-tag">Game Development</span>
-                <span class="skill-tag">Unity</span>
-                <span class="skill-tag">C#</span>
-                <span class="skill-tag">Interactive Media</span>
-            </div>
-            <p class="project-description">
-                An interactive game that explores the contributions and challenges of women in artificial intelligence. 
-                Players navigate through different scenarios highlighting the achievements and obstacles faced by women 
-                in the AI field, promoting awareness and discussion about gender representation in technology.
-            </p>
-            <iframe class="project-iframe" frameborder="0" src="https://itch.io/embed-upload/11017729?color=000000" allowfullscreen="" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <a href="https://racheltong29.itch.io/reflections-on-women-in-ai">Play Reflections on Women in AI on itch.io</a>
-            </iframe>
-            <div class="iframe-fallback" style="display: none; background: rgba(0,0,0,0.3); border-radius: 10px; padding: 20px; text-align: center; margin-bottom: 15px;">
-                <p style="color: aliceblue; margin-bottom: 15px;">Game preview temporarily unavailable</p>
-                <a href="https://racheltong29.itch.io/reflections-on-women-in-ai" class="project-link" style="display: inline-block; width: auto; padding: 8px 16px;">View on itch.io</a>
-            </div>
-            <a href="https://racheltong29.itch.io/reflections-on-women-in-ai" class="project-link">Play Game</a>
-        </div>
-        
-        <div class="project-card">
-            <h2 class="project-title">Southern Mountain AMV</h2>
-            <div class="skills-tags">
-                <span class="skill-tag">Scratch</span>
-            </div>
-            <p class="project-description">
-                An animated music video set to "南山南" (Southern Mountain), featuring creative visual storytelling 
-                and synchronized animations. This project showcases skills in video editing, animation techniques, 
-                and creative direction in multimedia production.
-            </p>
-            <a href="finished AMV - 南山南 southern mountain.html" class="project-link">Watch AMV</a>
-        </div>
+    <div class="projects-hero">
+        <h1>projects</h1>
     </div>
-    
+
+    <div class="stripe-band"></div>
+
+    <div class="projects-grid">
+
+        <!-- 01 · CMU Bulletin -->
+        <div class="pcard" style="transform: rotate(-1deg);">
+            <div class="tape" style="background: repeating-linear-gradient(90deg, #FF3B7F 0px, #FF3B7F 8px, rgba(255,255,255,0.22) 8px, rgba(255,255,255,0.22) 12px);"></div>
+            <h2 class="pcard-title">cmu bulletin</h2>
+            <p class="pcard-desc">Anonymous bulletin board for CMU students — messages, threads, and reactions.</p>
+            <div class="tags">
+                <span class="tag">react</span>
+                <span class="tag">firebase</span>
+                <span class="tag">nosql</span>
+                <span class="tag">cloud functions</span>
+            </div>
+            <a href="https://cmubulletin.com/" class="pcard-link" target="_blank" rel="noreferrer">↗ visit site</a>
+        </div>
+
+        <!-- 02 · AWAP -->
+        <div class="pcard" style="transform: rotate(1.2deg); background: #FFE5D2;">
+            <div class="tape" style="background: repeating-linear-gradient(90deg, #3b6dc4 0px, #3b6dc4 8px, rgba(255,255,255,0.22) 8px, rgba(255,255,255,0.22) 12px);"></div>
+            <h2 class="pcard-title">algorithms with a purpose</h2>
+            <p class="pcard-desc">ACM algorithms event</p>
+            <div class="tags">
+                <span class="tag">three.js</span>
+                <span class="tag">figma</span>
+                <span class="tag">posters</span>
+                <span class="tag">stickers</span>
+            </div>
+            <a href="https://awap.acmatcmu.com/" class="pcard-link" target="_blank" rel="noreferrer">↗ visit site</a>
+        </div>
+
+        <!-- 03 · CatApply -->
+        <div class="pcard" style="transform: rotate(-0.8deg);">
+            <div class="tape" style="background: repeating-linear-gradient(90deg, #FF3B7F 0px, #FF3B7F 8px, rgba(255,255,255,0.22) 8px, rgba(255,255,255,0.22) 12px);"></div>
+            <h2 class="pcard-title">catapply</h2>
+            <p class="pcard-desc">TartanHacks project.</p>
+            <div class="tags">
+                <span class="tag">html</span>
+                <span class="tag">css</span>
+                <span class="tag">javascript</span>
+                <span class="tag">figma</span>
+                <span class="tag">aws</span>
+            </div>
+            <a href="https://github.com/racheltong29/teamastra" class="pcard-link" target="_blank" rel="noreferrer">↗ view on github</a>
+        </div>
+
+        <!-- 04 · Reflections on Women in AI -->
+        <div class="pcard" style="transform: rotate(1.5deg); background: #FFE5D2;">
+            <div class="tape" style="background: repeating-linear-gradient(90deg, #00ACEE 0px, #00ACEE 8px, rgba(255,255,255,0.22) 8px, rgba(255,255,255,0.22) 12px);"></div>
+            <h2 class="pcard-title">reflections on women in ai</h2>
+            <p class="pcard-desc">visual novel and sociology</p>
+            <div class="tags">
+                <span class="tag">unity</span>
+                <span class="tag">c#</span>
+                <span class="tag">interactive story</span>
+                <span class="tag">game dev</span>
+            </div>
+            <a href="https://racheltong29.itch.io/reflections-on-women-in-ai" class="pcard-link" target="_blank" rel="noreferrer">↗ play on itch.io</a>
+        </div>
+
+        <!-- 05 · Southern Mountain AMV -->
+        <div class="pcard" style="transform: rotate(-1.2deg);">
+            <div class="tape" style="background: repeating-linear-gradient(90deg, #a65745 0px, #a65745 8px, rgba(255,255,255,0.22) 8px, rgba(255,255,255,0.22) 12px);"></div>
+            <h2 class="pcard-title">南山南 amv</h2>
+            <p class="pcard-desc">Animation created w/ Scratch</p>
+            <div class="tags">
+                <span class="tag">scratch</span>
+                <span class="tag">animation</span>
+                <span class="tag">amv</span>
+            </div>
+            <a href="finished AMV - 南山南 southern mountain.html" class="pcard-link">↗ watch amv</a>
+        </div>
+
+    </div>
+
 </body>
+</html>

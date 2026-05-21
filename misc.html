@@ -10,32 +10,61 @@
 
     <title>misc - Rachel Tong</title>
 
-    <link rel="icon" href="images/websitelogo.png" type="image/x-icon">
+    <link rel="icon" href="images/websitelogo.svg" type="image/svg+xml">
 
     <link rel="stylesheet" href="assets\style.css">
     <link rel="stylesheet" href="assets\navbar.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barriecito&family=Baskervville+SC&family=Carrois+Gothic+SC&family=Climate+Crisis&family=Gaegu&family=Major+Mono+Display&family=Reenie+Beanie&family=Zilla+Slab+Highlight:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Carrois+Gothic+SC&family=Reenie+Beanie&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
-        <a href="index.html"><img class="logo" src="images/websitelogo.png" alt="logo" style="width:50px;height:50px;"></a>
+        <div class="header-left">
+            <a href="index.html"><img class="logo" src="images/websitelogo.svg" alt="logo"></a>
+            <span class="site-name">rachel · tong</span>
+        </div>
         <nav>
             <ul class="nav_links">
               <li><a href="index.html">home</a></li>
               <li><a href="projects.html">projects</a></li>
               <li><a href="resume3.pdf">resume</a></li>
               <li><a href="gallery.html">gallery</a></li>
-              <li><a href="misc.html">misc</a></li>
+              <li class="active"><a href="misc.html">misc</a></li>
               <li><a href="techstack.html">techstack</a></li>
             </ul>
         </nav>
     </header>
 
-    <p style="align-items: center;">
-        Nothing here yet  ( > o < )
-    </p>
+    <div style="padding: 60px; background: #0e0824; min-height: calc(100vh - 70px);">
+
+        <div style="display: inline-flex; align-items: center; gap: 12px; padding: 8px 18px; background: #150a30; color: #f4ecd8; border: 2px solid #f4ecd8; transform: rotate(-1.5deg); box-shadow: 5px 5px 0 #a65745; margin-bottom: 10px;">
+            <span style="font-family: 'Climate Crisis', sans-serif; font-size: 32px; line-height: 1;">★</span>
+            <span style="font-family: 'Carrois Gothic SC', sans-serif; font-size: 12px; letter-spacing: 0.28em;">CURRENTLY</span>
+        </div>
+        <p style="font-family: 'Reenie Beanie', cursive; font-size: 30px; color: #f4ecd8; margin: 10px 0 32px; line-height: 1;">
+            what's going on right now ↓
+        </p>
+
+        <div style="display: flex; flex-direction: column; gap: 8px; max-width: 600px;">
+
+            <div style="display: flex; justify-content: space-between; align-items: baseline; padding: 14px 18px; background: rgba(244,236,216,0.06); border: 1px solid rgba(244,236,216,0.18);">
+                <span style="font-family: 'Carrois Gothic SC', sans-serif; font-size: 11px; color: #a65745; letter-spacing: 0.2em;">currently/</span>
+                <span style="font-family: 'Carrois Gothic SC', sans-serif; font-size: 12px; color: #f4ecd8;">intern + research</span>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: baseline; padding: 14px 18px; background: rgba(244,236,216,0.06); border: 1px solid rgba(244,236,216,0.18);">
+                <span style="font-family: 'Carrois Gothic SC', sans-serif; font-size: 11px; color: #a65745; letter-spacing: 0.2em;">listening/</span>
+                <span style="font-family: 'Carrois Gothic SC', sans-serif; font-size: 12px; color: #f4ecd8;">taylor swift</span>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: baseline; padding: 14px 18px; background: rgba(244,236,216,0.06); border: 1px solid rgba(244,236,216,0.18);">
+                <span style="font-family: 'Carrois Gothic SC', sans-serif; font-size: 11px; color: #a65745; letter-spacing: 0.2em;">reading/</span>
+                <span style="font-family: 'Carrois Gothic SC', sans-serif; font-size: 12px; color: #f4ecd8;">rouge street, shuang xuetao</span>
+            </div>
+
+        </div>
+    </div>
 </body>

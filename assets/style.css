@@ -298,3 +298,331 @@ footer a {
 a {
   text-decoration: none;
 }
+
+/* =====================
+   HERO SECTION (index)
+   ===================== */
+
+.hero {
+  position: relative;
+  height: calc(100vh - 60px);
+  overflow: hidden;
+  background-color: rgb(21, 10, 48);
+}
+
+/* Scattered star dots */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.stars::before {
+  content: '';
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow:
+    120px 55px 0 1px rgba(255,255,255,0.75),
+    350px 28px 0 1px rgba(255,255,255,0.5),
+    580px 90px 0 1px rgba(255,255,255,0.8),
+    820px 42px 0 1px rgba(255,255,255,0.4),
+    1050px 72px 0 1px rgba(255,255,255,0.6),
+    1260px 32px 0 1px rgba(255,255,255,0.7),
+    78px 200px 0 1px rgba(255,255,255,0.4),
+    420px 248px 0 1px rgba(255,255,255,0.6),
+    680px 178px 0 1px rgba(255,255,255,0.5),
+    930px 220px 0 1px rgba(255,255,255,0.7),
+    1150px 168px 0 1px rgba(255,255,255,0.4),
+    200px 380px 0 1px rgba(255,255,255,0.5),
+    510px 420px 0 1px rgba(255,255,255,0.6),
+    770px 358px 0 1px rgba(255,255,255,0.8),
+    1080px 408px 0 1px rgba(255,255,255,0.4),
+    1320px 348px 0 1px rgba(255,255,255,0.5),
+    40px 520px 0 1px rgba(255,255,255,0.6),
+    290px 558px 0 1px rgba(255,255,255,0.4),
+    640px 498px 0 1px rgba(255,255,255,0.7),
+    890px 538px 0 1px rgba(255,255,255,0.5),
+    1200px 488px 0 1px rgba(255,255,255,0.6),
+    170px 680px 0 1px rgba(255,255,255,0.5),
+    480px 708px 0 1px rgba(255,255,255,0.7),
+    740px 658px 0 1px rgba(255,255,255,0.4);
+}
+
+/* Big "rachel tong" name */
+.hero-name {
+  position: absolute;
+  left: 3%;
+  top: 15%;
+  line-height: 0.88;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.name-line {
+  font-family: 'Rubik Bubbles', cursive;
+  font-size: 19vw;
+  color: #f5ead8;
+  -webkit-text-stroke: 2px #f5ead8;
+  paint-order: stroke fill;
+  display: block;
+  animation: name-glow 3.5s ease-in-out infinite;
+}
+
+@keyframes name-glow {
+  0%, 100% {
+    text-shadow:
+      3px 5px 0 #3b6dc4,
+      6px 10px 0 #4a7fd4,
+      9px 14px 0 #7a3e2d,
+      11px 17px 0 #6a3020,
+      0 0 18px rgba(245, 234, 216, 0.06),
+      0 0 45px rgba(59, 109, 196, 0.07);
+  }
+  50% {
+    text-shadow:
+      3px 5px 0 #3b6dc4,
+      6px 10px 0 #4a7fd4,
+      9px 14px 0 #7a3e2d,
+      11px 17px 0 #6a3020,
+      0 0 18px rgba(245, 234, 216, 0.55),
+      0 0 45px rgba(59, 109, 196, 0.45),
+      0 0 80px rgba(224, 58, 141, 0.25),
+      0 0 120px rgba(245, 234, 216, 0.12);
+  }
+}
+
+/* Polaroid photo */
+.polaroid {
+  position: absolute;
+  top: 3%;
+  right: 2%;
+  width: 230px;
+  background: #f5ead8;
+  padding: 12px 12px 48px 12px;
+  transform: rotate(4deg);
+  z-index: 10;
+  box-shadow: 6px 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.polaroid img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.polaroid-footer {
+  text-align: right;
+  padding-top: 8px;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Decorative stripe stickers near the polaroid */
+.deco-stripes {
+  position: absolute;
+  top: 1%;
+  right: 20%;
+  z-index: 15;
+  display: flex;
+  gap: 4px;
+  transform: rotate(-10deg);
+  transform-origin: bottom center;
+}
+
+.stripe {
+  width: 18px;
+  height: 68px;
+}
+
+.stripe-pink {
+  background: repeating-linear-gradient(
+    0deg,
+    #e03a8d 0px,
+    #e03a8d 10px,
+    #f5a0ce 10px,
+    #f5a0ce 20px
+  );
+}
+
+.stripe-blue {
+  background: repeating-linear-gradient(
+    0deg,
+    #3b6dc4 0px,
+    #3b6dc4 10px,
+    #89b4e8 10px,
+    #89b4e8 20px
+  );
+}
+
+/* Handwriting annotations */
+.annotation {
+  position: absolute;
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 28px;
+  color: #e03a8d;
+  z-index: 10;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.annotation-me {
+  bottom: 36%;
+  left: 36%;
+}
+
+.find-me {
+  bottom: 37%;
+  right: 3%;
+}
+
+/* Info card (lower left) */
+.info-card {
+  position: absolute;
+  bottom: 4%;
+  left: 3%;
+  width: 30%;
+  min-width: 260px;
+  background: #f5ead8;
+  padding: 18px 22px 16px;
+  z-index: 10;
+  box-shadow: 4px 4px 0 #7a3e2d;
+}
+
+.card-greeting {
+  font-family: 'Carrois Gothic SC', sans-serif;
+  font-size: 11px;
+  color: #444;
+  margin: 0 0 6px 0;
+  letter-spacing: 0.5px;
+}
+
+.card-name {
+  font-family: 'Carrois Gothic SC', sans-serif;
+  font-size: 2.6rem;
+  color: #150a30;
+  margin: 0 0 10px 0;
+  line-height: 1;
+}
+
+.card-bio {
+  font-family: 'Carrois Gothic SC', sans-serif;
+  font-size: 11.5px;
+  color: #222;
+  line-height: 1.65;
+  margin: 0 0 14px 0;
+}
+
+.card-bio strong {
+  color: #150a30;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  background: #150a30;
+  color: white;
+  font-family: 'Carrois Gothic SC', sans-serif;
+  font-size: 10px;
+  padding: 3px 8px;
+  letter-spacing: 0.3px;
+}
+
+/* Social links (lower right) */
+.social-links {
+  position: absolute;
+  bottom: 4%;
+  right: 3%;
+  width: 30%;
+  min-width: 270px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  z-index: 10;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  overflow: hidden;
+  transition: opacity 0.2s;
+}
+
+.social-btn:hover {
+  opacity: 0.88;
+}
+
+.social-icon {
+  font-family: 'Carrois Gothic SC', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  width: 46px;
+  min-width: 46px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.18);
+  flex-shrink: 0;
+}
+
+.social-text {
+  padding: 0 14px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+.social-label {
+  font-family: 'Carrois Gothic SC', sans-serif;
+  font-size: 10px;
+  opacity: 0.75;
+  display: block;
+  letter-spacing: 0.3px;
+}
+
+.social-handle {
+  font-family: 'Carrois Gothic SC', sans-serif;
+  font-size: 13px;
+  display: block;
+}
+
+.social-btn.linkedin   { background: #3b6dc4; }
+.social-btn.github     { background: #0e0920; }
+.social-btn.instagram  { background: #e03a8d; }
+.social-btn.email-btn  { background: #7a3e2d; }
+
+/* Blue grid stripes — bottom-left decoration */
+.deco-grid {
+  position: absolute;
+  bottom: 2%;
+  left: 0;
+  width: 130px;
+  height: 26px;
+  background: repeating-linear-gradient(
+    90deg,
+    #3b6dc4 0px,
+    #3b6dc4 13px,
+    transparent 13px,
+    transparent 20px
+  );
+  z-index: 5;
+  opacity: 0.75;
+}
