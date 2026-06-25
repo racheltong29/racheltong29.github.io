@@ -41,6 +41,15 @@
 </head>
 <body>
     <div id="root"></div>
-    <script type="text/babel" src="home.jsx" data-type="module"></script>
+    <script>
+        fetch('home.jsx')
+            .then((res) => res.text())
+            .then((src) => {
+                const { code } = Babel.transform(src, { presets: [['react', { runtime: 'classic' }]] });
+                const script = document.createElement('script');
+                script.text = code;
+                document.body.appendChild(script);
+            });
+    </script>
 </body>
 </html>

@@ -137,7 +137,7 @@ function Home() {
           <div className="mono" style={{ fontSize: 10, letterSpacing: "0.2em", color: "var(--burnt)", fontWeight: "900" }}>★ hi there, i'm</div>
           <div className="climate" style={{ fontSize: 38, lineHeight: 1, marginTop: 6 }}>rachel,</div>
           <p style={{ fontSize: 13, lineHeight: 1.6, marginTop: 10, marginBottom: 0 }}>
-            sophomore @ <b>cmu scs</b>, aspiring ml engineer who tinkers with cool software projects, web dev, design, and visual novels.
+            Currently @ <b>cmu scs</b>, aspiring ml engineer who tinkers with cool software projects, web dev, design, and visual novels.
           </p>
         </div>
 
